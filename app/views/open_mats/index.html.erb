@@ -1,0 +1,7 @@
+<h1><%= pluralize(@open_mats.size, 'Open Mat') %>
+
+<ul>
+    <% @open_mats.each do |open_mat| %>
+      <li><%= open_mat %></li>
+    <% end %>
+</ul>
