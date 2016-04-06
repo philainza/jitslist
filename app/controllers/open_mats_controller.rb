@@ -1,5 +1,5 @@
 class OpenMatsController < ApplicationController
   def index
-    @open_mats = ["Pacific Beach", "Mission Beach", "La Jolla Shores"]
+    @open_mats = OpenMat.all
   end
 end
