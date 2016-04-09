@@ -5,15 +5,18 @@ describe "Viewing the list of open mats" do
   it "shows the open mats" do 
     open_mat1 = OpenMat.create(location: "Pacific Beach",
                                 host: "Jimmy Newtron",
-                                number_people_attending: 5)
+                                number_people_attending: 5,
+                                starts_at: 2.days.from_now)
 
     open_mat2 = OpenMat.create(location: "Mission Beach",
                                 host: "Homer Simpson",
-                                number_people_attending: 8)
+                                number_people_attending: 8,
+                                starts_at: 1.day.from_now)
 
     open_mat3 = OpenMat.create(location: "Ocean Beach",
                                 host: "Peter Griffin",
-                                number_people_attending: 12)
+                                number_people_attending: 12,
+                                starts_at: 1.day.ago)
 
     visit open_mats_url
 

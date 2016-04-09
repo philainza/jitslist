@@ -12,8 +12,12 @@
         <td><%= open_mat.host %></td>
       </tr>
       <tr>
-        <th>Number of People Attending:</th>
+        <th># People Attending:</th>
         <td><%= open_mat.number_people_attending %></td>
+      </tr>
+      <tr>
+        <th>When:</th>
+        <td><%= open_mat.starts_at %> (<%= starts_in(open_mat) %>)</td>
       </tr>
     </table>
   </article>

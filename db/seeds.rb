@@ -5,3 +5,24 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+OpenMat.create!([
+  {
+    location: "Pacific Beach",
+    host: "Jimmy Newtron",
+    number_people_attending: 5,
+    starts_at: 2.days.from_now
+  },
+  {
+    location: "Mission Beach",
+    host: "Homer Simpson",
+    number_people_attending: 8,
+    starts_at: 1.day.from_now
+  },
+  {
+    location: "Ocean Beach",
+    host: "Peter Griffin",
+    number_people_attending: 12,
+    starts_at: 1.day.ago
+  }
+])
