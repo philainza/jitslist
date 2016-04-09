@@ -11,6 +11,11 @@
   <p>
     <%= @open_mat.number_people_attending %>
   </p>
+  <h3>When</h3>
+  <p>
+    <%= @open_mat.starts_at.to_s %>
+    <%= starts_in(@open_mat) %>
+  </p>
 </article>
 
 <%= link_to "All Open Mats", open_mats_path %>

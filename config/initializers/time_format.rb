@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:start_time] = "%B %d, %Y at %l:%M %p"

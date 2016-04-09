@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406184818) do
+ActiveRecord::Schema.define(version: 20160409194524) do
 
   create_table "open_mats", force: true do |t|
     t.string   "location"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160406184818) do
     t.integer  "number_people_attending"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "starts_at"
   end
 
 end
