@@ -6,4 +6,8 @@ class OpenMatsController < ApplicationController
   def show
     @open_mat = OpenMat.find(params[:id])
   end
+
+  def edit
+    @open_mat = OpenMat.find(params[:id])
+  end
 end
