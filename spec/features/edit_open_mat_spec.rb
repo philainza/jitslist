@@ -11,5 +11,13 @@ describe "Editing an open mat" do
     expect(current_path).to eq(edit_open_mat_path(open_mat))
 
     expect(find_field('Location').value).to eq(open_mat.location)
+
+    fill_in 'Location', with: "Updated Open Mat Location"
+
+    click_button 'Update Open mat'
+
+    expect(current_path).to eq(open_mat_path(open_mat))
+
+    expect(page).to have_text('Updated Open mat Location')
   end
 end
