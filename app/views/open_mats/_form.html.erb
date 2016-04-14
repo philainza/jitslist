@@ -1,0 +1,22 @@
+<%= form_for(@open_mat) do |f| %>
+  <p>
+    <%= f.label :location %><br/>
+    <%= f.text_field :location, autofocus: true %>
+  </p>
+  <p>
+    <%= f.label :host %><br/>
+    <%= f.text_field :host %>
+  </p>
+  <p>
+    <%= f.label :number_people_attending %>
+    <%= f.number_field :number_people_attending %>
+  </p>  
+  <p>
+    <%= f.label :starts_at %>
+    <%= f.datetime_local_field :starts_at %>
+  </p>
+  <p>
+    <%= f.submit %> |
+    <%= link_to "Cancel", open_mats_path %>
+  </p>
+<% end %>
