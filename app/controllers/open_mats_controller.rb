@@ -27,6 +27,12 @@ class OpenMatsController < ApplicationController
     redirect_to @open_mat
   end 
 
+  def destroy
+    @open_mat = OpenMat.find(params[:id])
+    @open_mat.destroy
+    redirect_to open_mats_url
+  end
+
   private
 
     def open_mat_params
