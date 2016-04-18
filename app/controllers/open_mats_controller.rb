@@ -1,6 +1,6 @@
 class OpenMatsController < ApplicationController
   def index
-    @open_mats = OpenMat.all
+    @open_mats = OpenMat.upcoming
   end
 
   def show
