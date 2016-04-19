@@ -1,8 +1,6 @@
 
 <h1><%= pluralize(@open_mats.size, 'Open Mat') %></h1>
 
-<%= link_to("Add New Open mat", new_open_mat_path) %>
-
 <% @open_mats.each do |open_mat| %>
   <article>
     <header>
@@ -22,7 +20,6 @@
         <td><%= open_mat.starts_at %> (<%= starts_in(open_mat) %>)</td>
       </tr>
     </table>
+    <%= image_for(open_mat) %>
   </article>
 <% end %>
-
-<%= render 'footer' %>

@@ -36,6 +36,6 @@ class OpenMatsController < ApplicationController
   private
 
     def open_mat_params
-      params.require(:open_mat).permit(:location, :host, :number_people_attending, :starts_at)
+      params.require(:open_mat).permit(:location, :host, :number_people_attending, :starts_at, :image_file_name)
     end
 end

@@ -7,4 +7,12 @@ module OpenMatsHelper
       "Starts " + distance_of_time_in_words(current_time, open_mat.starts_at) + " from now"
     end
   end
+
+  def image_for(open_mat)
+    if open_mat.image_file_name.blank?
+      image_tag 'placeholder.png'
+    else
+      image_tag open_mat.image_file_name
+    end
+  end
 end

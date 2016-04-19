@@ -16,9 +16,8 @@
     <%= @open_mat.starts_at %>
     <%= starts_in(@open_mat) %>
   </p>
+  <%= image_for(@open_mat) %>
 </article>
 
-<%= link_to "All Open Mats", open_mats_path %>
 <%= link_to "Edit", edit_open_mat_path(@open_mat) %>
 <%= link_to "Delete", open_mat_path(@open_mat), method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= render 'footer' %>

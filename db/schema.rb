@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409194524) do
+ActiveRecord::Schema.define(version: 20160419150612) do
 
   create_table "open_mats", force: true do |t|
     t.string   "location"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160409194524) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "starts_at"
+    t.string   "image_file_name"
   end
 
 end
