@@ -13,8 +13,11 @@ class OpenMatsController < ApplicationController
 
   def update
     @open_mat = OpenMat.find(params[:id])
-    @open_mat.update(open_mat_params)
-    redirect_to @open_mat
+    if @open_mat.update(open_mat_params)
+      redirect_to @open_mat
+    else
+      render :edit
+    end
   end
 
   def new
@@ -23,8 +26,11 @@ class OpenMatsController < ApplicationController
 
   def create
     @open_mat = OpenMat.new(open_mat_params)
-    @open_mat.save
-    redirect_to @open_mat
+    if @open_mat.save
+      redirect_to @open_mat
+    else
+      render :new
+    end
   end 
 
   def destroy
