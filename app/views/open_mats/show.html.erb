@@ -19,5 +19,5 @@
   <%= image_for(@open_mat) %>
 </article>
 
-<%= link_to "Edit", edit_open_mat_path(@open_mat) %>
-<%= link_to "Delete", open_mat_path(@open_mat), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to "Edit", edit_open_mat_path(@open_mat), class: 'btn btn-info btn-xs' %>
+<%= link_to "Delete", open_mat_path(@open_mat), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
