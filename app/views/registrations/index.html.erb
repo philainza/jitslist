@@ -1,0 +1,11 @@
+<header id="content-header">
+  <h1>Registrations for <%= link_to(@open_mat.location, @open_mat) %></h1>
+</header>
+
+<ol id="registrations">
+  <% @registrations.each do |r| %>
+    <li>
+      <%= r.name %>
+    </li>
+  <% end %>
+</ol> 

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :registrations
-
   root "open_mats#index"
-  resources :open_mats
+  resources :open_mats do 
+    resources :registrations
+  end
 end
