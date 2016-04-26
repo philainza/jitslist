@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419150612) do
+ActiveRecord::Schema.define(version: 20160426201109) do
 
   create_table "open_mats", force: true do |t|
     t.string   "location"
@@ -22,5 +22,19 @@ ActiveRecord::Schema.define(version: 20160419150612) do
     t.datetime "starts_at"
     t.string   "image_file_name"
   end
+
+  create_table "registrations", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "gender"
+    t.string   "belt_level"
+    t.integer  "age"
+    t.string   "affiliation"
+    t.integer  "open_mat_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "registrations", ["open_mat_id"], name: "index_registrations_on_open_mat_id"
 
 end

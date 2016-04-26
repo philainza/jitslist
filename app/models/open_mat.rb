@@ -9,6 +9,8 @@ class OpenMat < ActiveRecord::Base
     message: "must reference a GIF, JPG, or PNG image"
   }
 
+  has_many :registrations, dependent: :destroy
+
   def expired?
     starts_at < Time.now
   end
