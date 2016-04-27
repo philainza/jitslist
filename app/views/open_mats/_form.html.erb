@@ -1,5 +1,5 @@
 <%= form_for(@open_mat) do |f| %>
-  <%= render "shared/errors" %>
+  <%= render "shared/errors", object: @open_mat %>
   <p>
     <%= f.label :location %><br/>
     <%= f.text_field :location, autofocus: true %>

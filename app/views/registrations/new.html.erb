@@ -1,0 +1,44 @@
+<header>
+  <h1>New Registration for <%= link_to(@open_mat.location, @open_mat) %></h1>
+</header>
+
+<%= form_for([@open_mat, @registration]) do |f| %>
+  <%= render "shared/errors", object: @registration %>
+  <fieldset>
+    <ol>
+      <li>
+        <%= f.label :name %>
+        <%= f.text_field :name, size: 40, autofocus: true %>
+      </li>
+      <li>
+        <%= f.label :email %>
+        <%= f.text_field :email, size: 40 %>
+      </li>
+      <li>
+        <%= f.label :gender %>
+        <% Registration::GENDER_OPTIONS.each do |gender| %>
+          <span>
+            <%= f.radio_button :gender, gender %> <%= gender %>
+          </span>
+        <% end %>
+      </li>
+      <li>
+        <%= f.label :age %>
+        <%= f.number_field :age %>
+      </li>
+      <li>
+        <%= f.label :belt_level %>
+        <%= f.select :belt_level,
+                      Registration::BELT_LEVEL_OPTIONS %>
+      </li>
+      <li>
+        <%= f.label :affiliation %>
+        <%= f.text_field :affiliation, size: 40 %>
+      </li>
+    </ol>
+    <p>
+      <%= f.submit 'Register' %>
+      <%= link_to "Cancel", @open_mat, class: 'button' %>
+    </p>
+  </fieldset>
+<% end %>

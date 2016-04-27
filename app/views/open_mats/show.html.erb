@@ -6,20 +6,28 @@
   <h3>Host:</h3>
   <p>
     <%= @open_mat.host %>
-  </p>
-  <h3>Number of People Attending</h3>
-  <p>
-    <%= @open_mat.number_people_attending %>
-  </p>
-  <h3>When</h3>
+  </p><h3>When:</h3>
   <p>
     <%= @open_mat.starts_at %>
     <%= starts_in(@open_mat) %>
   </p>
+  <h3><%= @open_mat.registrations.size %> People Attending:</h3>
+  <p>
+    <% @open_mat.registrations.each do |r| %>
+    <li>
+      <%= r.name %>
+    </li>
+  <% end %>
+  </p>
+  
   <%= image_for(@open_mat) %>
-</article>
 
 <%= link_to pluralize(@open_mat.registrations.size, "registration"), open_mat_registrations_path(@open_mat) %>
 
-<%= link_to "Edit", edit_open_mat_path(@open_mat), class: 'btn btn-info btn-xs' %>
-<%= link_to "Delete", open_mat_path(@open_mat), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
+<footer>
+  <%= link_to "Register!", new_open_mat_registration_path(@open_mat, class: "button ok register") %>
+
+  <%= link_to "Edit", edit_open_mat_path(@open_mat), class: 'btn btn-info btn-xs' %>
+  <%= link_to "Delete", open_mat_path(@open_mat), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
+</footer>
+</article>
