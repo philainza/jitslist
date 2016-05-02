@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426201109) do
+ActiveRecord::Schema.define(version: 20160502203936) do
 
   create_table "open_mats", force: true do |t|
     t.string   "location"
@@ -36,5 +36,13 @@ ActiveRecord::Schema.define(version: 20160426201109) do
   end
 
   add_index "registrations", ["open_mat_id"], name: "index_registrations_on_open_mat_id"
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
