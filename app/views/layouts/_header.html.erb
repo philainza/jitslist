@@ -1,3 +1,13 @@
 <header style="padding: 5px; color: #f0f0f0; background: #237cbe;">
-    <h1>Jitslist</h1>
+    <h1>bjjhub</h1>
+    <nav>
+      <p>
+        <% if current_user %>
+          <%= link_to current_user.name, current_user %>
+        <% else %>
+            <%= link_to 'Sign Up', signup_path, class: 'button' %>
+            <%= link_to 'Sign In', new_session_path, class: 'button' %>
+        <% end %>
+      </p>
+</nav>
 </header>
